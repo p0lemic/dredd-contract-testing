@@ -1,0 +1,91 @@
+{
+  "basePath": "/",
+  "definitions": {
+    "product": {
+      "example": {
+        "createdAt": "1970-01-01T00:00:00.001Z",
+        "currency": "€",
+        "id": "e7ba4c75-b1bb-483d-94d8-2c4a10f78472",
+        "price": 49.99,
+        "published": true,
+        "sku": "556312",
+        "slug": "lagavulin-16-years",
+        "updatedAt": "1970-01-01T00:00:00.001Z"
+      },
+      "properties": {
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "price": {
+          "format": "float",
+          "type": "number"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sku",
+        "price",
+        "currency",
+        "slug",
+        "published"
+      ],
+      "title": "Product",
+      "type": "object"
+    }
+  },
+  "host": "localhost:8000",
+  "info": {
+    "contact": {
+      "email": "javieroman@gmail.com"
+    },
+    "description": "Product API OpenAPI 3.0.3 definition",
+    "title": "Product API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/product": {
+      "get": {
+        "description": "Get a product",
+        "operationId": "get-product",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Get a product",
+            "schema": {
+              "$ref": "#/definitions/product"
+            }
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "x-components": {}
+}
