@@ -3,9 +3,11 @@
   "scripts": {
     "dredd": "dredd --config ./tests/Feature/v1/dredd.v1.yml",
     "test": "npm run dredd",
-    "publish": "pactflow publish-provider-contract spec/openapi_v3.yml --provider pactflow-example-bi-directional-provider-dredd --provider-app-version $(npx -y absolute-version) --branch $(git rev-parse --abbrev-ref HEAD) --content-type application/yaml --verification-exit-code=0 --verification-results output/report.md --verification-results-content-type \"text/plain\" --verifier dredd",
-    "can-i-deploy": "pact-broker can-i-deploy --pacticipant pactflow-example-bi-directional-provider-dredd --version=\"$(npx @pact-foundation/absolute-version)\" --to-environment production",
-    "deploy": "pact-broker record-deployment --pacticipant pactflow-example-bi-directional-provider-dredd --version \"$(npx @pact-foundation/absolute-version)\" --environment production"
+    "publish": "pactflow publish-provider-contract spec/openapi_v3.yml --provider productApi-dredd --provider-app-version 1.0.0 --branch $(git rev-parse --abbrev-ref HEAD) --content-type application/yaml --verification-exit-code=0 --verification-results output/report.md --verification-results-content-type \"text/plain\" --verifier dredd",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant productApi-dredd --version=1.0.0 --to-environment production",
+    "deploy": "pact-broker record-deployment --pacticipant productApi-dredd --version 1.0.0 --environment production",
+    "can-i-deploy-pact": "pact-broker can-i-deploy --pacticipant productApi-pact --version=1.0.0 --to-environment production --broker-base-url=http://localhost:9292",
+    "deploy-pact": "pact-broker record-deployment --pacticipant productApi-pact --version 1.0.0 --environment production --broker-base-url=http://localhost:9292"
   },
   "devDependencies": {
     "api-spec-converter": "^2.7.23",

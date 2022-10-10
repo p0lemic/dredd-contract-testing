@@ -14,14 +14,14 @@ class ProductProviderTest extends TestCase
     public function testProductProducer()
     {
         $config = new VerifierConfig();
-        $config->setProviderName('productApi') // Providers name to fetch.
-        ->setProviderVersion('1.0.0') // Providers version.
-        ->setProviderBaseUrl(new Uri('http://localhost:8000')) // URL of the Provider.
-        ->setBrokerUri(new Uri('http://localhost:9292'))
+        $config->setProviderName('productApi-pact') // Providers name to fetch.
+            ->setProviderVersion('1.0.0') // Providers version.
+            ->setProviderBaseUrl(new Uri('http://localhost:8000')) // URL of the Provider.
+            ->setBrokerUri(new Uri('http://localhost:9292'))
             ->setPublishResults(true);
 
         $verifier = new Verifier($config);
-        $verifier->verifyFiles([__DIR__ . "/../../pacts/product-web-product-api.json"]);
+        $verifier->verifyFiles([__DIR__ . "/../../../web-pact/pacts/productWeb-pact-productApi-pact.json"]);
 
         // This will not be reached if the PACT verifier throws an error, otherwise it was successful.
         $this->assertTrue(true, 'Pact Verification has failed.');

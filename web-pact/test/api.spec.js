@@ -1,12 +1,10 @@
 'use strict';
 
-import {imposterPort} from "../test/config";
-
 const { pactWith } = require('jest-pact');
 const { Matchers } = require('@pact-foundation/pact');
 
-import { ProductAPIClient } from "./api";
-import {Product} from "./product";
+import { ProductAPIClient } from "../src/api";
+import {Product} from "../src/product";
 import path from "path";
 const LOG_LEVEL = process.env.LOG_LEVEL || 'WARN';
 
@@ -14,7 +12,7 @@ pactWith(
     {
         consumer: 'productWeb-pact',
         provider: 'productApi-pact',
-        dir: path.resolve(process.cwd(), 'pacts'),
+        dir: path.resolve(process.cwd(), './pacts'),
         logLevel: LOG_LEVEL,
     },
     (provider) => {

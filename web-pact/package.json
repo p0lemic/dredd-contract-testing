@@ -10,9 +10,9 @@
   "scripts": {
     "pretest": "rimraf pacts",
     "test": "jest",
-    "publish": "pact-broker publish ./pacts --consumer-app-version=\"$(npx @pact-foundation/absolute-version)\" --auto-detect-version-properties",
-    "can-i-deploy": "pact-broker can-i-deploy --pacticipant productWeb-productApi-mountebank --version=\"$(npx @pact-foundation/absolute-version)\" --to-environment production",
-    "deploy": "pact-broker record-deployment --pacticipant productWeb-productApi-mountebank --version \"$(npx @pact-foundation/absolute-version)\" --environment production"
+    "publish": "pact-broker publish ./pacts --consumer-app-version=1.0.0 --auto-detect-version-properties --broker-base-url=http://localhost:9292",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant productWeb-pact --version=1.0.0 --to-environment production --broker-base-url=http://localhost:9292",
+    "deploy": "pact-broker record-deployment --pacticipant productWeb-pact --version 1.0.0 --environment production --broker-base-url=http://localhost:9292"
   },
   "devDependencies": {
     "@anev/ts-mountebank": "^1.4.1",

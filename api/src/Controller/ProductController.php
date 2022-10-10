@@ -22,18 +22,7 @@ class ProductController extends AbstractController
                 'published' => true,
                 'createdAt' => '1970-01-01T00:00:00.001Z',
                 'updatedAt' => '1970-01-01T00:00:00.001Z',
-            ],
-            [
-                'id' => 'b580b471-fbf2-4498-8127-81cb89870aa9',
-                'title' => 'The Macallan Sherry Oak 12 Years',
-                'sku' => '479024',
-                'price' => 75.90,
-                'currency' => '€',
-                'slug' => 'the-macallan-sherry-oak-12-years',
-                'published' => true,
-                'createdAt' => '1970-01-01T00:00:00.001Z',
-                'updatedAt' => '1970-01-01T00:00:00.001Z',
-            ],
+            ]
         ]);
     }
 

@@ -1,7 +1,7 @@
-import { imposterPort } from "../test/config";
-import { ProductAPIClient } from "./api";
-import { Product } from "./product";
-import { startAndClearStubs, writeStubs, stopStubs } from "../test/mountebank";
+import { imposterPort } from "./config";
+import { ProductAPIClient } from "../src/api";
+import { Product } from "../src/product";
+import { startAndClearStubs, writeStubs, stopStubs } from "./mountebank";
 
 import {
     Response,
