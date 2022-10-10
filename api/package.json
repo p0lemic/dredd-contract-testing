@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "dredd": "dredd --config ./tests/Feature/v1/dredd.v1.yml",
+    "test": "npm run dredd",
+    "publish": "pactflow publish-provider-contract spec/openapi_v3.yml --provider pactflow-example-bi-directional-provider-dredd --provider-app-version $(npx -y absolute-version) --branch $(git rev-parse --abbrev-ref HEAD) --content-type application/yaml --verification-exit-code=0 --verification-results output/report.md --verification-results-content-type \"text/plain\" --verifier dredd",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant pactflow-example-bi-directional-provider-dredd --version=\"$(npx @pact-foundation/absolute-version)\" --to-environment production",
+    "deploy": "pact-broker record-deployment --pacticipant pactflow-example-bi-directional-provider-dredd --version \"$(npx @pact-foundation/absolute-version)\" --environment production"
+  },
+  "devDependencies": {
+    "api-spec-converter": "^2.7.23",
+    "dredd": "^14.1.0",
+    "json-refs": "^3.0.12",
+    "@pact-foundation/pact-core": "^13.7.1"
+  },
+  "dependencies": {
+    "redoc-cli": "^0.7.0"
+  }
+}

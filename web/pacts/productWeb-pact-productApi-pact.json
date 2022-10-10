@@ -1,0 +1,52 @@
+{
+  "consumer": {
+    "name": "productWeb-pact"
+  },
+  "interactions": [
+    {
+      "description": "a request for products",
+      "providerState": "i have a list of products",
+      "request": {
+        "headers": {
+          "Accept": "application/json"
+        },
+        "method": "GET",
+        "path": "/products"
+      },
+      "response": {
+        "body": [
+          {
+            "createdAt": "1970-01-01T00:00:00.001Z",
+            "currency": "€",
+            "id": "e7ba4c75-b1bb-483d-94d8-2c4a10f78472",
+            "price": 89.9,
+            "published": true,
+            "sku": "556312",
+            "slug": "lagavulin-16-years",
+            "title": "Lagavulin 16 Years",
+            "updatedAt": "1970-01-01T00:00:00.001Z"
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.1.4"
+    },
+    "pactRust": {
+      "ffi": "0.3.12",
+      "models": "0.4.5"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "productApi-pact"
+  }
+}

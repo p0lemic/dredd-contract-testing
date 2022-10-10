@@ -46,7 +46,7 @@ services:
       - "8001:8080"
     environment: [ "SWAGGER_JSON=/var/www/web/openapi_v3.yml","VALIDATOR_URL=" ]
     volumes:
-      - ./spec:/var/www/web:ro
+      - ./api/spec:/var/www/web:ro
 
   pact-broker:
     image: 'pactfoundation/pact-broker:latest'
@@ -54,6 +54,8 @@ services:
     container_name: pact-broker
     depends_on:
       - postgresql
+    expose:
+      - 9292
     ports:
       - "9292:9292"
     environment:
@@ -67,7 +69,7 @@ services:
       PACT_BROKER_DATABASE_CONNECT_MAX_RETRIES: "5"
       # The list of allowed base URLs (not setting this makes the app vulnerable to cache poisoning)
       # This allows the app to be addressed from the host from within another docker container correctly
-      PACT_BROKER_BASE_URL: 'https://localhost http://localhost http://localhost:9292 http://deck-pact-broker:9292'
+      PACT_BROKER_BASE_URL: 'https://localhost http://localhost http://localhost:9292 http://pact-broker:9292'
 
 volumes:
   database:

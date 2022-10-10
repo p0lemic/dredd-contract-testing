@@ -1,0 +1,15 @@
+{"level":"info","message":"[mb:2525] mountebank v2.7.0 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2022-10-10T08:03:06.986Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/5001","timestamp":"2022-10-10T08:03:07.807Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2022-10-10T08:03:07.813Z"}
+{"level":"info","message":"[http:5001] Open for business...","timestamp":"2022-10-10T08:03:07.835Z"}
+{"level":"info","message":"[http:5001] ::1:58036 => GET /products","timestamp":"2022-10-10T08:03:07.839Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/5001","timestamp":"2022-10-10T08:03:07.844Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/5001","timestamp":"2022-10-10T08:03:07.849Z"}
+{"level":"info","message":"[http:5001] Ciao for now","timestamp":"2022-10-10T08:03:07.850Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2022-10-10T08:03:07.851Z"}
+{"level":"info","message":"[http:5001] Open for business...","timestamp":"2022-10-10T08:03:07.855Z"}
+{"level":"info","message":"[http:5001] ::1:58040 => GET /product/10","timestamp":"2022-10-10T08:03:07.859Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/5001","timestamp":"2022-10-10T08:03:07.861Z"}
+{"level":"info","message":"[http:5001] ::1:58042 => GET /product/11","timestamp":"2022-10-10T08:03:07.865Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/5001","timestamp":"2022-10-10T08:03:07.868Z"}
+{"level":"info","message":"[mb:2525] Adios - see you soon?","timestamp":"2022-10-10T08:03:07.937Z"}
